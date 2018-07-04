@@ -5,9 +5,13 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import ElementUI from 'element-ui'
-import underscore from 'vue-underscore'
+// import ElementUI from 'element-ui'
 
+import {
+  Select, Switch, Option
+} from 'element-ui'
+
+import underscore from 'vue-underscore'
 import store from './store.js'
 
 import './styles/flickity.css'
@@ -16,7 +20,10 @@ import './styles/application.scss'
 
 Vue.config.productionTip = false
 
-Vue.use(ElementUI)
+Vue.use(Select)
+Vue.use(Switch)
+Vue.use(Option)
+
 Vue.use(VueAxios, axios)
 Vue.use(underscore)
 

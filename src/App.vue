@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="header">
+      <h1>Comicomic</h1>
+    </div>
+    <div class="container">
+      <router-view/>
+    </div>
+    <!-- <img src="./assets/logo.png"> -->
+    
   </div>
 </template>
 
@@ -11,13 +17,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+}
+.container{
+  width: 900px;
+  padding: 0 50px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.header{
+  padding: 15px 0;
+  background-color: $b;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  h1{
+    color: $mainColor;
+    font-style: italic;
+  }
 }
 </style>

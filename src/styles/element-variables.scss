@@ -4,4 +4,33 @@ $--color-primary: $mainColor;
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
+// select
+$--border-color-base: $b;
+$--border-radius-base: 0;
+$--border-width-base: 2px;
+$--select-border-color-hover: $b;
+$--select-option-hover-background: $b;
+// $--select-option-selected-hover: $mainColor;
+$--select-input-color: $b;
+
+
+// swith
+$--switch-on-color: $b;
+$--switch-off-color: $w;
+$--switch-core-border-radius: 0px;
+
+
 @import "~element-ui/packages/theme-chalk/src/index";
+
+
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
+    color: $mainColor;
+}
+
+.pager .el-select:first-of-type > .el-input .el-input__inner{
+    border-right-width: 0px;
+  }
+
+  .el-switch__core:after{
+      border-radius: 0;
+  }
