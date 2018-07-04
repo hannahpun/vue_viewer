@@ -10,6 +10,7 @@ import underscore from 'vue-underscore'
 
 import store from './store.js'
 
+import './styles/flickity.css'
 import './styles/element-variables.scss'
 import './styles/application.scss'
 
