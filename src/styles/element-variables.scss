@@ -14,10 +14,11 @@ $--select-option-hover-background: $b;
 $--select-input-color: $b;
 
 
-// swith
+// switch
 $--switch-on-color: $b;
 $--switch-off-color: $w;
 $--switch-core-border-radius: 0px;
+$--switch-height: 24px;
 
 
 @import "~element-ui/packages/theme-chalk/src/index";

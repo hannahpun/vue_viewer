@@ -30,21 +30,23 @@
       
     </div>
     <div class="main-carousel">
-      <div class="carousel-cell" id="cell1">
-        <img class="carousel-image" data-flickity-lazyload="./static/storyboard-1.png">
+      <div class="carousel-cell" :id="'cell'+ index" v-for="(item, index) in flickityImgList" :key="item.id">
+        <img class="carousel-image" :data-flickity-lazyload="item">
       </div>
-      <div class="carousel-cell" id="cell2">
-        <img class="carousel-image" data-flickity-lazyload="./static/storyboard-2.png">
-      </div>
-      <div class="carousel-cell" id="cell3">
-        <img class="carousel-image" data-flickity-lazyload="./static/storyboard-3.png">
+    </div>
+    <div class="carousel-nav">
+      <div class="carousel-cell" v-for="item in flickityImgList" :key="item.id">
+        <img class="carousel-image" :data-flickity-lazyload="item">
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Flickity from 'flickity-hash'
+var Flickity = require('flickity');
+// import Flickity from 'flickity-hash'
+require('flickity-as-nav-for');
+require('flickity-hash');
 
 export default {
   name: 'Page',
@@ -70,22 +72,44 @@ export default {
         value: '选项2',
         label: 'kk'
       }],
+      // flickity
+      flickityImgList: [
+        './static/storyboard-1.png',
+        './static/storyboard-2.png',
+        './static/storyboard-3.png',
+        './static/storyboard-4.png',
+        './static/storyboard-5.png',
+        './static/storyboard-6.png',
+        './static/storyboard-7.png',
+        './static/storyboard-8.png',
+        './static/storyboard-9.png',
+        './static/storyboard-10.png',
+      ],
       flickityOptions: {
         hash: true,
         lazyLoad: true,
-        contain: true
+        contain: true,
+        pageDots: false
       },
+      flickityNavO: {
+        asNavFor: '.main-carousel',
+        lazyLoad: true,
+        lazyLoad: 5,
+        contain: true,
+        pageDots: false
+      }
     }
   },
   mounted (){
     var flkty = new Flickity( '.main-carousel', this.flickityOptions);
+    var flktyNav= new Flickity( '.carousel-nav', this.flickityNavO);
   },
   methods: {
     next() {
-      this.$refs.flickity.next();
+      // this.$refs.flickity.next();
     },
     previous() {
-      this.$refs.flickity.previous();
+      // this.$refs.flickity.previous();
     }
   }
 }
@@ -93,9 +117,51 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.carousel-cell{
+  width: 100%;
+  img{
+    // width: 100%;
+  }
+}
 .main-carousel{
   width: 100%;
   margin: 0 auto;
+}
+
+.carousel-nav {
+  margin-top: 10px;
+  .carousel-cell {
+    width: 100px;
+    margin: 0 10px;
+    box-sizing: border-box;
+    counter-increment: carousel-cell;
+    text-align: center;
+    &.is-nav-selected {
+      top: 4px;
+      &::before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent $b transparent;
+        position: relative;
+        left: calc(50% - 5px);
+      }
+      img{
+        border: 3px solid $b;
+      } 
+    }
+    &::before{
+      content: counter(carousel-cell);
+      display: block;
+      padding-bottom: 5px;
+      // margin-top: -20px;
+    }
+    img{
+      width: 100%;
+    }
+  }
 }
 .pager{
     padding: 30px;
