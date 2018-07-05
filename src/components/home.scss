@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    img{
+        flex: 1
+        
+    }
+    .txt-wrapper{
+        flex: 1;
+    }
+    img{
+        width: 100%;
+    }
+}

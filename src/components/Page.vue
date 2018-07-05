@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ isDark : swithValue}">
+  <div>
     <div class="pager">
       <div class="pager-header">
         <h3>My Hexschool <i class="icon el-icon-caret-right"></i></h3>
@@ -8,7 +8,7 @@
             v-for="(item, index) in flickityImgList"
             :key="item.id"
             :label="'Page ' + (index+1)"
-            :value="index">
+            :value="(index+1)">
           </el-option>
         </el-select>
       </div>
@@ -22,7 +22,7 @@
       
     </div>
     <div class="main-carousel">
-      <div class="carousel-cell" :id="'cell'+ index" v-for="(item, index) in flickityImgList" :key="item.id">
+      <div class="carousel-cell" :id="'cell'+ (index+1)" v-for="(item, index) in flickityImgList" :key="item.id">
         <img class="carousel-image" :data-flickity-lazyload="item">
       </div>
     </div>
@@ -39,13 +39,14 @@ var Flickity = require('flickity');
 // import Flickity from 'flickity-hash'
 require('flickity-as-nav-for');
 require('flickity-hash');
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'Page',
   data () {
     return {
       //swutch
-      swithValue:true, 
+      swithValue: true, 
       // chapter select
       chapterValue: '',
       chapterOptions: [{
@@ -90,7 +91,10 @@ export default {
   watch: {
     pageValue (value){
       this.flkty.next();
-      this.flkty.select( value );
+      this.flkty.select( value - 1 );
+    },
+    swithValue (value){
+      this.Mode(value)
     }
   },
   mounted (){
@@ -98,13 +102,11 @@ export default {
     var flktyNav= new Flickity( '.carousel-nav', this.flickityNavO);
     // this.flktys = flkty;
   },
+  computed: {
+    ...mapState(['isLight'])
+  },
   methods: {
-    next() {
-      // this.$refs.flickity.next();
-    },
-    previous() {
-      // this.$refs.flickity.previous();
-    }
+    ...mapMutations(['Mode'])
   }
 }
 </script>
