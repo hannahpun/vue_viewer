@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss">
 #app {
-  
+  padding-bottom: 30px;
 }
 .container{
   width: 900px;

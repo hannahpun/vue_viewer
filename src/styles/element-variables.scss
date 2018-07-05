@@ -18,7 +18,6 @@ $--select-input-color: $b;
 $--switch-on-color: $b;
 $--switch-off-color: $w;
 $--switch-core-border-radius: 0px;
-$--switch-height: 24px;
 
 
 @import "~element-ui/packages/theme-chalk/src/index";
@@ -28,9 +27,7 @@ $--switch-height: 24px;
     color: $mainColor;
 }
 
-.pager .el-select:first-of-type > .el-input .el-input__inner{
-    border-right-width: 0px;
-  }
+
 
   .el-switch__core:after{
       border-radius: 0;

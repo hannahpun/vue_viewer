@@ -1,22 +1,14 @@
 <template>
-  <div>
+  <div :class="{ isDark : swithValue}">
     <div class="pager">
       <div class="pager-header">
         <h3>My Hexschool <i class="icon el-icon-caret-right"></i></h3>
-        <el-select v-model="chapterValue" placeholder="请选择">
-          <el-option
-            v-for="item in chapterOptions"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
         <el-select v-model="pageValue" placeholder="请选择">
           <el-option
-            v-for="item in pageOptions"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
+            v-for="(item, index) in flickityImgList"
+            :key="item.id"
+            :label="'Page ' + (index+1)"
+            :value="index">
           </el-option>
         </el-select>
       </div>
@@ -64,14 +56,7 @@ export default {
         label: '双皮奶'
       }],
       // page select
-      pageValue: '',
-      pageOptions: [{
-        value: '选项1',
-        label: 'haha'
-      }, {
-        value: '选项2',
-        label: 'kk'
-      }],
+      pageValue: 1,
       // flickity
       flickityImgList: [
         './static/storyboard-1.png',
@@ -96,13 +81,22 @@ export default {
         lazyLoad: true,
         lazyLoad: 5,
         contain: true,
+        groupCells: 5,
         pageDots: false
-      }
+      },
+      flkty: ''
+    }
+  },
+  watch: {
+    pageValue (value){
+      this.flkty.next();
+      this.flkty.select( value );
     }
   },
   mounted (){
-    var flkty = new Flickity( '.main-carousel', this.flickityOptions);
+    this.flkty = new Flickity( '.main-carousel', this.flickityOptions);
     var flktyNav= new Flickity( '.carousel-nav', this.flickityNavO);
+    // this.flktys = flkty;
   },
   methods: {
     next() {
@@ -117,68 +111,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.carousel-cell{
-  width: 100%;
-  img{
-    // width: 100%;
-  }
-}
-.main-carousel{
-  width: 100%;
-  margin: 0 auto;
-}
 
-.carousel-nav {
-  margin-top: 10px;
-  .carousel-cell {
-    width: 100px;
-    margin: 0 10px;
-    box-sizing: border-box;
-    counter-increment: carousel-cell;
-    text-align: center;
-    &.is-nav-selected {
-      top: 4px;
-      &::before{
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 10px 10px 10px;
-        border-color: transparent transparent $b transparent;
-        position: relative;
-        left: calc(50% - 5px);
-      }
-      img{
-        border: 3px solid $b;
-      } 
-    }
-    &::before{
-      content: counter(carousel-cell);
-      display: block;
-      padding-bottom: 5px;
-      // margin-top: -20px;
-    }
-    img{
-      width: 100%;
-    }
-  }
-}
-.pager{
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .icon{
-      font-weight: 400;
-      font-size: 16px;
-    }
-    h3{
-      padding-right: 5px;
-    }
-    .pager-header{
-      display: flex;
-      align-items: center;
-    }
-    
-}
 </style>
