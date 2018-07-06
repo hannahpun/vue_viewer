@@ -23,7 +23,7 @@
     </div>
     <div class="main-carousel">
       <div class="carousel-cell" :id="'cell'+ (index+1)" v-for="(item, index) in flickityImgList" :key="item.id">
-        <img class="carousel-image" :data-flickity-lazyload="item">
+        <img class="carousel-image" :data-flickity-lazyload=item>
       </div>
     </div>
     <div class="carousel-nav">
@@ -60,16 +60,16 @@ export default {
       pageValue: 1,
       // flickity
       flickityImgList: [
-        'static/storyboard-1.png',
-        'static/storyboard-2.png',
-        'static/storyboard-3.png',
-        'static/storyboard-4.png',
-        'static/storyboard-5.png',
-        'static/storyboard-6.png',
-        'static/storyboard-7.png',
-        'static/storyboard-8.png',
-        'static/storyboard-9.png',
-        'static/storyboard-10.png',
+        "/static/storyboard-1.png",
+        '/static/storyboard-2.png',
+        '/static/storyboard-3.png',
+        '/static/storyboard-4.png',
+        '/static/storyboard-5.png',
+        '/static/storyboard-6.png',
+        '/static/storyboard-7.png',
+        '/static/storyboard-8.png',
+        '/static/storyboard-9.png',
+        '/static/storyboard-10.png',
       ],
       flickityOptions: {
         // hash: true,
