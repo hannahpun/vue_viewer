@@ -2,7 +2,7 @@
   <div class="home">
     <div class="main">
       <div class="img">
-        <img src="/static/comic_cover.png" alt="">
+        <img src="static/comic_cover.png" alt="">
       </div>
       <div class="txt-wrapper">
         <h1 class="txt-header">
