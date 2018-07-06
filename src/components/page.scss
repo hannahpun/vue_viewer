@@ -1,104 +1,104 @@
-.carousel-cell{
-  width: 100%;
-  img{
-    // width: 100%;
-  }
-}
-.main-carousel{
-  width: 100%;
-  margin: 0 auto;
-  .flickity-prev-next-button.next{
-    right: -50px;
-  }
-  .flickity-prev-next-button.previous{
-    left: -50px;
-  }
-  .flickity-slider {
-    transform: none !important;
-  }
-  .flickity-prev-next-button{
-    background-color: transparent;
-  }
-  .carousel-cell{
-    left: 0 !important;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: -1;
-    &.is-selected{
-      opacity: 1;
-      z-index: 0
-    }
-  }
-}
+// .carousel-cell{
+//   width: 100%;
+//   img{
+//     width: 100%;
+//   }
+// }
+// .main-carousel{
+//   width: 100%;
+//   margin: 0 auto;
+//   .flickity-prev-next-button.next{
+//     right: -50px;
+//   }
+//   .flickity-prev-next-button.previous{
+//     left: -50px;
+//   }
+//   .flickity-slider {
+//     transform: none !important;
+//   }
+//   .flickity-prev-next-button{
+//     background-color: transparent;
+//   }
+//   // .carousel-cell{
+//   //   left: 0 !important;
+//   //   opacity: 0;
+//   //   transition: opacity 0.3s ease-in-out;
+//   //   z-index: -1;
+//   //   &.is-selected{
+//   //     opacity: 1;
+//   //     z-index: 0
+//   //   }
+//   // }
+// }
 
-.carousel-nav {
+// .carousel-nav {
   
-  .flickity-viewport{
-    width: 90%;
-    margin: 10px auto 0 auto;
-  }
-  .flickity-prev-next-button{
-    border-radius: 0;
-    height: 100%;
-    background-color: rgba($b, 0.7);
-  }
-  .flickity-button-icon{
-    fill: $w;
-  }
-  .flickity-prev-next-button.next{
-    right: 0;
-  }
-  .flickity-prev-next-button.previous{
-    left: 0;
-  }
-  .carousel-cell {
-    width: 90px;
-    margin: 0 10px;
-    box-sizing: border-box;
-    counter-increment: carousel-cell;
-    text-align: center;
-    &.is-nav-selected {
-      top: 4px;
-      &::before{
-        content: '';
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 10px 10px 10px;
-        border-color: transparent transparent $b transparent;
-        position: relative;
-        left: calc(50% - 5px);
-      }
-      img{
-        border: 3px solid $b;
-      } 
-    }
-    &::before{
-      content: counter(carousel-cell);
-      display: block;
-      padding-bottom: 5px;
-      // margin-top: -20px;
-    }
-    img{
-      width: 100%;
-    }
-  }
-}
-.pager{
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .icon{
-      font-weight: 400;
-      font-size: 16px;
-    }
-    h3{
-      padding-right: 5px;
-    }
-    .pager-header{
-      display: flex;
-      align-items: center;
-    }
+//   .flickity-viewport{
+//     width: 90%;
+//     margin: 10px auto 0 auto;
+//   }
+//   .flickity-prev-next-button{
+//     border-radius: 0;
+//     height: 100%;
+//     background-color: rgba($b, 0.7);
+//   }
+//   .flickity-button-icon{
+//     fill: $w;
+//   }
+//   .flickity-prev-next-button.next{
+//     right: 0;
+//   }
+//   .flickity-prev-next-button.previous{
+//     left: 0;
+//   }
+//   .carousel-cell {
+//     width: 90px;
+//     margin: 0 10px;
+//     box-sizing: border-box;
+//     counter-increment: carousel-cell;
+//     text-align: center;
+//     &.is-nav-selected {
+//       top: 4px;
+//       &::before{
+//         content: '';
+//         width: 0;
+//         height: 0;
+//         border-style: solid;
+//         border-width: 0 10px 10px 10px;
+//         border-color: transparent transparent $b transparent;
+//         position: relative;
+//         left: calc(50% - 5px);
+//       }
+//       img{
+//         border: 3px solid $b;
+//       } 
+//     }
+//     &::before{
+//       content: counter(carousel-cell);
+//       display: block;
+//       padding-bottom: 5px;
+//       // margin-top: -20px;
+//     }
+//     img{
+//       width: 100%;
+//     }
+//   }
+// }
+// .pager{
+//     padding: 30px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     .icon{
+//       font-weight: 400;
+//       font-size: 16px;
+//     }
+//     h3{
+//       padding-right: 5px;
+//     }
+//     .pager-header{
+//       display: flex;
+//       align-items: center;
+//     }
     
-}
+// }

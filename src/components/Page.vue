@@ -74,14 +74,13 @@ export default {
       flickityOptions: {
         hash: true,
         lazyLoad: true,
-        lazyLoad: 5,
         contain: true,
         pageDots: false
       },
       flickityNavO: {
         asNavFor: '.main-carousel',
         lazyLoad: true,
-        lazyLoad: 5,
+        // lazyLoad: 5,
         contain: true,
         groupCells: 5,
         pageDots: false
