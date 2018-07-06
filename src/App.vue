@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <h1>Comicomic</h1>
+      <h1><router-link to="/">Comicomic</router-link></h1>
     </div>
     <div class="container">
       <router-view/>
@@ -22,16 +22,19 @@ export default {
   padding-bottom: 30px;
 }
 .container{
-  width: 900px;
+  width: 760px;
   padding: 0 50px;
   margin: 0 auto;
   box-sizing: border-box;
+   @media screen and (max-width: 750px){
+        width: 100%;
+    }
 }
 .header{
   padding: 15px 0;
   background-color: $b;
   text-align: center;
-  h1{
+  h1 a{
     color: $mainColor;
     font-style: italic;
   }
