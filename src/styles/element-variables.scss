@@ -14,9 +14,11 @@ $--select-option-hover-background: $b;
 $--select-input-color: $b;
 
 
+
+
 // switch
-$--switch-on-color: $b;
-$--switch-off-color: $w;
+// $--switch-on-color: $b;
+// $--switch-off-color: $w;
 $--switch-core-border-radius: 0px;
 
 
@@ -25,6 +27,14 @@ $--switch-core-border-radius: 0px;
 
 .el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
     color: $mainColor;
+}
+.el-switch__core{
+    border-color: #000 !important;
+    background-color: #000 !important;
+}
+.isDark .el-switch__core{
+    border-color: #fff !important;
+    // background-color: #fff !important;
 }
 
 

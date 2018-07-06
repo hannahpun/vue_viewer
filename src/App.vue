@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ isDark : !isLight}">
     <div class="header">
       <h1>Comicomic</h1>
     </div>
@@ -12,17 +12,28 @@
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
 export default {
-  name: 'App'
+  name: 'App',
+  computed: {
+    ...mapState(['isLight'])
+  },
 }
 </script>
 
 <style lang="scss">
 #app {
   padding-bottom: 30px;
+  background-color: $grey;
+  color: $b;
+  &.isDark{
+    background-color: $b;
+    color: $w;
+  }
 }
 .container{
-  width: 900px;
+  max-width: 900px;
   padding: 0 50px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -31,9 +42,15 @@ export default {
   padding: 15px 0;
   background-color: $b;
   text-align: center;
+  .isDark &{
+    background-color: $mainColor;
+  }
   h1{
     color: $mainColor;
     font-style: italic;
+    .isDark &{
+      color: $b;
+    }
   }
 }
 </style>

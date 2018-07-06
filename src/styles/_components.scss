@@ -7,11 +7,14 @@
 .main-carousel{
   width: 100%;
   margin: 0 auto;
+  img{
+    width: 100%;
+  }
   .flickity-prev-next-button.next{
-    right: -50px;
+    // right: -50px;
   }
   .flickity-prev-next-button.previous{
-    left: -50px;
+    // left: -50px;
   }
   .flickity-slider {
     transform: none !important;
@@ -35,7 +38,8 @@
   
   .flickity-viewport{
     width: 90%;
-    margin: 10px auto 0 auto;
+    padding-left: 5%;
+    // margin: 10px auto 0 auto;
   }
   .flickity-prev-next-button{
     border-radius: 0;
@@ -95,6 +99,9 @@
     }
     h3{
       padding-right: 5px;
+      @media screen and (max-width: "560px"){
+        display: none;
+      }
     }
     .pager-header{
       display: flex;

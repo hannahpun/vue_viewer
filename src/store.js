@@ -8,6 +8,7 @@ import {_} from 'vue-underscore'
 // axios.defaults.baseURL = 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97'
 
 const state = {
+  isLight: true
   // inputSearchTxt: '',
 }
 
@@ -20,9 +21,9 @@ const getters = {
 
 // methods
 const mutations = {
-  // CHECK_LOCATE (state, txt) {
-  //   state.inputSearchTxt = txt
-  // }
+  Mode (state, txt) {
+    state.isLight = txt
+  }
 }
 
 const actions = {
