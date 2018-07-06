@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="{ isDark : !isLight}">
     <div class="header">
-      <h1>Comicomic</h1>
+      <h1><router-link to="/">Comicomic</router-link></h1>
     </div>
     <div class="container">
       <router-view/>
@@ -33,10 +33,13 @@ export default {
   }
 }
 .container{
-  max-width: 900px;
+  max-width: 760px;
   padding: 0 50px;
   margin: 0 auto;
   box-sizing: border-box;
+   @media screen and (max-width: 750px){
+        width: 100%;
+    }
 }
 .header{
   padding: 15px 0;
@@ -45,7 +48,7 @@ export default {
   .isDark &{
     background-color: $mainColor;
   }
-  h1{
+  h1 a{
     color: $mainColor;
     font-style: italic;
     .isDark &{
